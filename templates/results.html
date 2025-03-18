@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using Item Personality Based Profiling in Music Recommender Systems</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+            .intro{
+                background-image: url('/static/header-opaque.jpg'); 
+                background-repeat: no-repeat; 
+                background-size:cover;
+                color: white; 
+                height: 40rem;
+            }
+        </style>
+
+        <script>
+            function thankYou() {
+                alert("Thank you for answering our survey. Redirecting to first page.");
+            }
+        </script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg p-2" style="background-color: rgb(3, 37, 69); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+            <div class="mx-3" style="border-right: 1px solid white">
+                <b><a class="navbar-brand" href="#" style="color: white">Thesis</a></b>
+            </div>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav" style="color: white">
+                <!-- items -->
+              </ul>
+            </div>
+          </nav>
+
+        <div class="w-100 text-center outer-div d-flex justify-content-center align-items-center intro">
+            <div class="inner-div w-75">
+                <h1 class="display-5 fade-in" style="font-weight: bold">Using Item Personality Based Profiling in Music Recommender Systems</h1>
+                <br>
+                <p style="font-size:1.3rem">Please review the recommendations given to you by our models and check the checkbox to indicate a like or dislike rating for the song. After scanning the songs recommended to you, please answer the next survey.</p>
+                <br>
+                <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">
+                  Answer Survey
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: black">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title" id="exampleModalLabel">Model Survey</h5>
+                      </div>
+                      <div class="modal-body">
+                        <form method="POST">
+                        
+                            <p> Answer the following questions from the first and second section using this likert scale: <br>1 - Strong Disagree, 5 - Strongly Agree <br> For the third section, just answer accordingly.</p>
+
+                        <h6 class="text-uppercase fw-bold my-5">List A</h6>
+
+                        1) The items recommended to me in List A matched my interests. <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq1" id="inlineRadio1" value="1" required>
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq1" id="inlineRadio2" value="2" required>
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq1" id="inlineRadio1" value="3" required>
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq1" id="inlineRadio2" value="4" required>
+                            <label class="form-check-label" for="inlineRadio2">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq1" id="inlineRadio2" value="5" required>
+                            <label class="form-check-label" for="inlineRadio2">5</label>
+                        </div>
+                        
+                        <br><br>
+                        
+                        2) The items recommended to me in List A are diverse (not too similar from each other) <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq2" id="inlineRadio1" value="1" required>
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq2" id="inlineRadio2" value="2" required>
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq2" id="inlineRadio1" value="3" required>
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq2" id="inlineRadio2" value="4" required>
+                            <label class="form-check-label" for="inlineRadio2">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq2" id="inlineRadio2" value="5" required>
+                            <label class="form-check-label" for="inlineRadio2">5</label>
+                        </div>
+                        
+                        <br><br>
+                        
+                        3) Overall, I am satisfied with the Recommendation List A. <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq3" id="inlineRadio1" value="1" required>
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq3" id="inlineRadio2" value="2" required>
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq3" id="inlineRadio1" value="3" required>
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq3" id="inlineRadio2" value="4" required>
+                            <label class="form-check-label" for="inlineRadio2">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aq3" id="inlineRadio2" value="5" required>
+                            <label class="form-check-label" for="inlineRadio2">5</label>
+                        </div>
+
+                        <br><br>
+
+                        <h6 class="text-uppercase fw-bold my-5">List B</h6>
+
+                        1) The items recommended to me in List B matched my interests. <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq1" id="inlineRadio1" value="1" required>
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq1" id="inlineRadio2" value="2" required>
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq1" id="inlineRadio1" value="3" required>
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq1" id="inlineRadio2" value="4" required>
+                            <label class="form-check-label" for="inlineRadio2">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq1" id="inlineRadio2" value="5" required>
+                            <label class="form-check-label" for="inlineRadio2">5</label>
+                        </div>
+                        
+                        <br><br>
+
+                        2) The items recommended to me in List B are diverse (not too similar from each other) <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq2" id="inlineRadio1" value="1" required>
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq2" id="inlineRadio2" value="2" required>
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq2" id="inlineRadio1" value="3" required>
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq2" id="inlineRadio2" value="4" required>
+                            <label class="form-check-label" for="inlineRadio2">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq2" id="inlineRadio2" value="5" required>
+                            <label class="form-check-label" for="inlineRadio2">5</label>
+                        </div>
+                        
+                        <br><br>
+
+                        3) Overall, I am satisfied with the Recommendation List B. <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq3" id="inlineRadio1" value="1" required>
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq3" id="inlineRadio2" value="2" required>
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq3" id="inlineRadio1" value="3" required>
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq3" id="inlineRadio2" value="4" required>
+                            <label class="form-check-label" for="inlineRadio2">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bq3" id="inlineRadio2" value="5" required>
+                            <label class="form-check-label" for="inlineRadio2">5</label>
+                        </div>
+
+                        <br><br>
+
+                        <h6 class="text-uppercase fw-bold my-5">List Comparison</h6>
+
+                        1) Which recommendation list is more interesting to you (matched more of your interests)? <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="lcq1" id="inlineRadio1" value="A" required>
+                            <label class="form-check-label" for="inlineRadio1">A</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="lcq1" id="inlineRadio2" value="B" required>
+                            <label class="form-check-label" for="inlineRadio2">B</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="lcq1" id="inlineRadio1" value="Hard to Tell" required>
+                            <label class="form-check-label" for="inlineRadio1">Hard to Tell</label>
+                        </div>
+                        
+                        <br><br>
+
+                        2) Which recommendation list do you consider to be more diverse?  <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="lcq2" id="inlineRadio1" value="A">
+                            <label class="form-check-label" for="inlineRadio1">A</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="lcq2" id="inlineRadio2" value="B">
+                            <label class="form-check-label" for="inlineRadio2">B</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="lcq2" id="inlineRadio1" value="Hard to Tell">
+                            <label class="form-check-label" for="inlineRadio1">Hard to Tell</label>
+                        </div>
+                        
+                        <br><br><br><br>
+                          <center><input type="submit" name='getsurvey' value="Submit" class="btn w-50" style="background-color: rgb(3, 37, 69); color: white" data-toggle="modal" data-target="#myModal" onclick="thankYou()"></center>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="container w-75 my-5">
+            
+            {{ htmlstrr|safe }}
+        </div>
+
+        <footer class="text-center text-lg-start bg-body-tertiary text-muted" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+            <section class="d-flex justify-content-center justify-content-lg-between" style="background-color: rgb(3, 37, 69); color: white">
+              <div class="container text-center text-md-start my-3">
+                <center>
+                    © 2024 Copyright:
+                </center>
+              </div>
+            </section>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
